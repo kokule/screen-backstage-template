@@ -4,30 +4,36 @@
       <Sider class="sider" ref="side" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
         <div class="sider-top">
           <img width="50" src="@/assets/image/backstage/title-img.jpg"/>
-          <div class="title">龙袭</div>
+          <div class="title" v-show="!isCollapsed">龙袭</div>
         </div>
-        <div v-show="!isCollapsed" class="screen-main cursor-pointer" @click="toMainScreen()">
-          <Icon style="margin-bottom: 5px" type="ios-home-outline" size="22"/>
-          大屏首页
+        <div class="screen-main cursor-pointer" @click="toMainScreen()">
+          <Icon class="home-outline" :class="{active : isCollapsed}" type="ios-home-outline" size="22"/>
+          <span v-show="!isCollapsed">大屏首页</span>
         </div>
-        <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
-          <MenuItem name="1-1">
-            <Icon type="ios-navigate"></Icon>
-            <span>Option 1</span>
-          </MenuItem>
-          <MenuItem name="1-2">
-            <Icon type="ios-search"></Icon>
-            <span>Option 2</span>
-          </MenuItem>
-          <MenuItem name="1-3">
-            <Icon type="ios-settings"></Icon>
-            <span>Option 3</span>
+
+        <Menu v-for="e in menuList" :key="e.name" :active-name="$route.name"
+              :open-names="[menuList[0].name]" theme="dark" width="auto" :class="menuItemClasses">
+          <Submenu v-if="e.children.length > 1" :name="e.name">
+            <template slot="title">
+              <Icon :type="e.meta.icon"/>
+              {{e.meta.title}}
+            </template>
+            <MenuItem v-for="m in e.children" :key="m.name"
+                      :name="m.name" :to="m.path">{{m.meta.title}}
+            </MenuItem>
+          </Submenu>
+
+          <MenuItem v-else :to="e.children[0].path" :name="e.children[0].name">
+            <Icon :type="e.children[0].meta.icon"/>
+            {{e.children[0].meta.title}}
           </MenuItem>
         </Menu>
       </Sider>
+
       <Layout>
         <Header :style="{padding: 0}" class="layout-header-bar">
-          <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu"
+          <Icon class="cursor-pointer" @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}"
+                type="md-menu"
                 size="24"></Icon>
         </Header>
         <router-view></router-view>
@@ -48,10 +54,13 @@
           'menu-icon', this.isCollapsed ? 'rotate-icon' : ''
         ];
       },
-      menuitemClasses() {
+      menuItemClasses() {
         return [
           'menu-item', this.isCollapsed ? 'collapsed-menu' : ''
         ]
+      },
+      menuList() {
+        return this.$store.getters.menuList
       }
     },
     methods: {
@@ -98,7 +107,12 @@
         margin: 2% 0 2% 11%;
         font-size: 17px;
         font-weight: bold;
-        /*font-family: "PingFang SC";*/
+        .home-outline {
+          margin-bottom: 5px
+        }
+        .home-outline.active {
+          margin-left: 20px;
+        }
       }
     }
   }

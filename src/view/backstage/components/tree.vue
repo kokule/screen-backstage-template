@@ -1,10 +1,10 @@
 <template>
-  <div class="table-main"></div>
+  <div class="tree-main"></div>
 </template>
 
 <script>
   export default {
-    name: "table",
+    name: "tree",
     data() {
       return {}
     },
@@ -15,9 +15,9 @@
 </script>
 
 <style lang="less" scoped>
-  .table-main {
+  .tree-main {
     width: 100%;
     height: 100%;
-    background: cyan;
+    background: gold;
   }
 </style>

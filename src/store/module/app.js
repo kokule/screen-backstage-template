@@ -9,7 +9,7 @@ export default {
   getters: {
     menuList: state => {
       state.menuList.forEach(e => {
-        e.children = e.children.filter(v=>v.meta.access)
+        e.children = e.children.filter(v => v.meta.access)
       })
       return state.menuList
     }
