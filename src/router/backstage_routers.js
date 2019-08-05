@@ -1,8 +1,21 @@
+import Main from '../components/backstage-main'
+
 export default [
   {
-    path: '/',
-    name: 'HelloWorld',
-    // component: () => import('../components/HelloWorld.vue')
-  },
-
+    path: '/backstage',
+    name: 'backstageMain',
+    component: Main,
+    children: [
+      {
+        path: '/page-one',
+        name: 'pageOne',
+        meta: {
+          icon: '',
+          title: 'Table表格',
+          access: false
+        },
+        component: () => import('@/view/backstage/table/table')
+      }
+    ]
+  }
 ]

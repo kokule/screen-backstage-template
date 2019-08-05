@@ -91,12 +91,12 @@
   .mercury {
     width: 10px;
     height: 10px;
-    left: 46%;
+    left: 46.4%;
     top: 46%;
     position: absolute;
     background-color: rgb(166, 138, 56);
     border-radius: 50%;
-    transform-origin: 72px 14px;
+    transform-origin: 72px 5px;
     animation: rotate 2s infinite linear;
   }
 
@@ -104,27 +104,27 @@
     width: 135px;
     height: 135px;
     position: absolute;
-    left: 46.3%;
-    top: 38.9%;
+    left: 46.6%;
+    top: 39.2%;
   }
 
   .venus {
     width: 20px;
     height: 20px;
-    left: 44%;
-    top: 45.5%;
+    left: 44.7%;
+    top: 45.4%;
     position: absolute;
     background-color: rgb(246, 157, 97);
     border-radius: 50%;
-    transform-origin: 105px 17px;
+    transform-origin: 105px 5px;
     animation: rotate 3.84s infinite linear;
   }
 
   .venus-track {
     width: 190px;
     height: 190px;
-    left: 44.6%;
-    top: 35.3%;
+    left: 45.2%;
+    top: 36%;
     position: absolute;
   }
 
@@ -132,11 +132,11 @@
     width: 18px;
     height: 18px;
     position: absolute;
-    left: 41.7%;
+    left: 42.5%;
     top: 45.5%;
     background-color: #348EED;
     border-radius: 50%;
-    transform-origin: 143px 14px;
+    transform-origin: 143px 5px;
     animation: rotate 6.25s infinite linear;
   }
 
@@ -144,8 +144,8 @@
     width: 270px;
     height: 270px;
     position: absolute;
-    top: 30.2%;
-    left: 42.2%;
+    top: 31.5%;
+    left: 43%;
   }
 
   .mars {
@@ -153,10 +153,10 @@
     height: 15px;
     position: absolute;
     top: 45.5%;
-    left: 39.3%;
+    left: 40.6%;
     border-radius: 50%;
     background-color: rgb(140, 119, 63);
-    transform-origin: 181px 14px;
+    transform-origin: 181px 5px;
     animation: rotate 11s infinite linear;
   }
 
@@ -164,16 +164,16 @@
     width: 350px;
     height: 350px;
     position: absolute;
-    top: 25%;
-    left: 39.8%;
+    top: 27.2%;
+    left: 41%;
   }
 
   .jupiter {
     width: 42px;
     height: 42px;
     position: absolute;
-    left: 34.6%;
-    top: 45%;
+    left: 36.4%;
+    top: 44%;
     background-color: rgb(156, 164, 143);
     border-radius: 50%;
     transform-origin: 258px 20px;
@@ -184,19 +184,19 @@
     width: 480px;
     height: 480px;
     position: absolute;
-    top: 17%;
-    left: 35.8%;
+    top: 20.5%;
+    left: 37.5%;
   }
 
   .saturn {
     width: 26px;
     height: 26px;
     position: absolute;
-    left: 32.7%;
-    top: 45%;
+    left: 34.8%;
+    top: 44.8%;
     background-color: rgb(215, 171, 68);
     border-radius: 50%;
-    transform-origin: 292px 20px;
+    transform-origin: 292px 8px;
     animation: rotate 180s infinite linear;
   }
 
@@ -204,19 +204,19 @@
     width: 560px;
     height: 560px;
     position: absolute;
-    top: 12%;
-    left: 33.5%;
+    top: 16%;
+    left: 35.5%;
   }
 
   .uranus {
     width: 28px;
     height: 28px;
     position: absolute;
-    left: 30.5%;
-    top: 45%;
+    left: 33%;
+    top: 44.8%;
     background-color: rgb(164, 192, 206);
     border-radius: 50%;
-    transform-origin: 330px 20px;
+    transform-origin: 330px 10px;
     animation: rotate 500s infinite linear;
   }
 
@@ -224,19 +224,19 @@
     width: 630px;
     height: 630px;
     position: absolute;
-    top: 7.8%;
-    left: 31.4%;
+    top: 12.2%;
+    left: 33.7%;
   }
 
   .neptune {
     width: 28px;
     height: 28px;
     position: absolute;
-    left: 27.7%;
+    left: 30.6%;
     top: 45%;
-    background-color: rgb(164, 192, 206);
+    background-color: rgb(118, 186, 206);
     border-radius: 50%;
-    transform-origin: 376px 20px;
+    transform-origin: 372px 10px;
     animation: rotate 1000s infinite linear;
   }
 
@@ -244,16 +244,16 @@
     width: 720px;
     height: 720px;
     position: absolute;
-    top: 2.5%;
-    left: 28.6%;
+    top: 7.5%;
+    left: 31.3%;
   }
 
   .peripheral {
-    width: 750px;
-    height: 750px;
+    width: 780px;
+    height: 780px;
     position: absolute;
-    top: 0.8%;
-    left: 27.7%;
-    box-shadow: 5px 5px 5px gold,-5px -5px 5px gold,-5px 5px 5px gold,5px -5px 5px gold;
+    top: 4.4%;
+    left: 29.8%;
+    box-shadow: 5px 5px 25px gold,-5px -5px 25px gold, -5px 5px 25px gold,5px -5px 25px gold;
   }
 </style>

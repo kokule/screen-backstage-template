@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     _callMethod (method, ...args) {
-      console.log(...args)
       if (!this.chart) return
       return this.chart[method](...args)
     },

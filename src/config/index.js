@@ -1,3 +1,3 @@
 export default {
-  homePage: ''
+  homePage: 'wanderingEarth'  // 登录跳转的页面名字
 }
