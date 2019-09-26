@@ -56,7 +56,7 @@
     methods: {
       initValue() {
         this.$axios.get('/amap/environmental/api/home/air/7day').then(res => {
-          // console.log(res.data)
+          console.log(res.data)
         })
       }
     },

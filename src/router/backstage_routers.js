@@ -1,5 +1,7 @@
 import Main from '../components/backstage-main'
 
+// assess 控制查看权限
+
 export default [
   {
     path: '/backstage',
@@ -14,7 +16,7 @@ export default [
         path: '/page-one',
         name: 'pageOne',
         meta: {
-          icon: '',
+          icon: 'ios-car',
           title: 'Table表格',
           access: true
         },
@@ -24,7 +26,7 @@ export default [
         path: '/page-two',
         name: 'pageTwo',
         meta: {
-          icon: '',
+          icon: 'ios-beer',
           title: '页面2',
           access: true
         },

@@ -16,16 +16,18 @@
           <Submenu v-if="e.children.length > 1" :name="e.name">
             <template slot="title">
               <Icon :type="e.meta.icon"/>
-              {{e.meta.title}}
+              <span>{{e.meta.title}}</span>
             </template>
             <MenuItem v-for="m in e.children" :key="m.name"
-                      :name="m.name" :to="m.path">{{m.meta.title}}
+                      :name="m.name" :to="m.path">
+              <Icon :type="m.meta.icon"/>
+              <span>{{m.meta.title}}</span>
             </MenuItem>
           </Submenu>
 
           <MenuItem v-else :to="e.children[0].path" :name="e.children[0].name">
             <Icon :type="e.children[0].meta.icon"/>
-            {{e.children[0].meta.title}}
+            <span>{{e.children[0].meta.title}}</span>
           </MenuItem>
         </Menu>
       </Sider>
@@ -150,14 +152,14 @@
 
   .menu-item i {
     transform: translateX(0px);
-    transition: font-size .2s ease, transform .2s ease;
+    transition: font-size 0.2s ease, transform 0.2s ease;
     vertical-align: middle;
     font-size: 16px;
   }
 
   .collapsed-menu span {
-    width: 0px;
-    transition: width .2s ease;
+    width: 0;
+    transition: width 0.2s ease;
   }
 
   .collapsed-menu i {
@@ -165,5 +167,14 @@
     transition: font-size .2s ease .2s, transform .2s ease .2s;
     vertical-align: middle;
     font-size: 22px;
+  }
+</style>
+<style lang="less">
+  .ivu-menu-item {
+    height: 50px;
+  }
+
+  .ivu-menu-vertical{
+    padding-left: 24px;
   }
 </style>
