@@ -1,11 +1,15 @@
 export default {
   state: {
-    username: '',
+    token: '',
+    userInfo: {},
   },
   getters: {},
   mutations: {
-    setUsername(state, username) {
-      state.username = username
+    setUserInfo(state, userInfo) {
+      state.userInfo = userInfo
+    },
+    setToken(state, token) {
+      state.token = token
     }
   },
   actions: {},

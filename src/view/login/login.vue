@@ -4,7 +4,7 @@
       <Card :bordered="false" title="欢迎登录">
         <Input v-model="username" style="margin-bottom: 20px" placeholder="请输入用户名"/>
         <Input v-model="password" style="margin-bottom: 20px" type="password" placeholder="请输入密码"/>
-        <Button style="width: 100%" type="primary" @click="handleSubmit">登录</Button>
+        <Button style="width: 100%" type="primary" @click="handleSubmit()">登录</Button>
       </Card>
     </div>
   </div>
@@ -12,22 +12,29 @@
 
 <script>
 
+  import {login} from '@/api/user'
+  import {setToken} from '../../libs/utils'
+
   export default {
     name: 'login',
     data() {
       return {
-        username: 'qinkai',
-        password: '123456',
+        username: '',
+        password: '',
       }
     },
     methods: {
       handleSubmit() {
-        if (this.username && this.password) {
-          this.$store.commit('setUsername', this.username)
-          this.$router.push({name: this.$config.homePage})
-        } else {
-          this.$Message.error('请输入用户名或密码')
+        let params = {
+          account: this.username,
+          password: this.password
         }
+        login(params).then(res => {
+          setToken(res.data.token)
+          this.$store.commit('setUserInfo', res.data)
+          this.$router.push({name: this.$config.homePage})
+        })
+
       }
     }
   }

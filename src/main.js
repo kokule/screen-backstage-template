@@ -18,9 +18,9 @@ Vue.config.productionTip = false
 
 Vue.prototype.moment = moment
 
-Vue.prototype.$axios = axios
-
 Vue.prototype.$config = config
+
+Vue.prototype.$store = store
 
 
 new Vue({
