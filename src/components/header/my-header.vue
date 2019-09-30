@@ -17,7 +17,8 @@
 </template>
 
 <script>
-  import routes from '../../router/screen_routers'
+  import routes from '@/router/screen_routers'
+  import {removeToken} from '@/libs/utils'
 
   export default {
     name: "my-header",
@@ -32,7 +33,7 @@
       routes() {
         return routes[2].children
       },
-      username () {
+      username() {
         return this.$store.state.user.username
       }
 
@@ -42,6 +43,7 @@
         this.realTime = this.moment(new Date().getTime()).format('YYYY-MM-DD HH:mm:ss')
       },
       logout() {
+        removeToken()
         this.$router.push({name: 'loginPage'})
       },
       toRoute(router) {
@@ -85,7 +87,7 @@
       float: right;
       margin: 0.8% 3% 0 0;
     }
-    .header-user{
+    .header-user {
       .font;
       margin: 0.5% 1% 0 0;
       float: right;
