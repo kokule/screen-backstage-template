@@ -19,8 +19,8 @@
     name: 'login',
     data() {
       return {
-        username: '',
-        password: '',
+        username: 'qinkai',
+        password: '123456',
       }
     },
     methods: {
@@ -36,6 +36,9 @@
         })
 
       }
+    },
+    mounted() {
+      console.log('666666666666666')
     }
   }
 </script>
