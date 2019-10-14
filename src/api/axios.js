@@ -4,14 +4,12 @@ import {getToken, removeToken} from '../libs/utils'
 
 axios.defaults.baseURL = '';
 axios.defaults.timeout = 5000;
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';  //此处是增加的代码，设置请求头的类型
 
 /**
  * 对请求的操作
  */
 axios.interceptors.request.use(config => {
-    config.headers = {
-      'Content-Type': 'application/json;charset=UTF-8'
-    }
     // 在发送请求前的操作
     const token = getToken();
     if (token) {
