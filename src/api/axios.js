@@ -9,6 +9,9 @@ axios.defaults.timeout = 5000;
  * 对请求的操作
  */
 axios.interceptors.request.use(config => {
+    config.headers = {
+      'Content-Type': 'application/json;charset=UTF-8'
+    }
     // 在发送请求前的操作
     const token = getToken();
     if (token) {
