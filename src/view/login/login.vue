@@ -20,7 +20,7 @@
     data() {
       return {
         username: 'qinkai',
-        password: '123456',
+        password: '12345',
       }
     },
     methods: {
@@ -30,9 +30,13 @@
           password: this.password
         }
         login(params).then(res => {
-          setToken(res.data.token)
-          this.$store.commit('setUserInfo', res.data)
-          this.$router.push({name: this.$config.homePage})
+          if (res.data.data) {
+            setToken(res.data.token)
+            this.$store.commit('setUserInfo', res.data)
+            this.$router.push({name: this.$config.homePage})
+          }
+        }).catch(error => {
+          this.$Message.error(error)
         })
 
       }

@@ -22,8 +22,8 @@ module.exports = {
     proxy: {
       '/amap': {
         target: 'http://192.168.1.217:30002',
-        // pathRewrite: { '^/amap': '' }, //  用/api 代替target里面的地址
-        // changeOrigin: true
+        // pathRewrite: { '^/amap': '/amap' }, //  用/api 代替target里面的地址/
+        changeOrigin: true
       }
     },
   }
