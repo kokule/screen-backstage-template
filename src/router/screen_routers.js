@@ -33,20 +33,20 @@ export default [
         component: () => import('../view/universe/index')
       },
       {
-        path: '/test-page1',
-        name: 'testPage1',
+        path: '/cesium',
+        name: 'cesium',
         meta: {
-          title: '测试页面1',
+          title: 'Cesium',
         },
-        component: () => import('../view/test/test1')
+        component: () => import('../view/cesium/index')
       },
       {
-        path: '/test-page2',
-        name: 'testPage2',
+        path: '/pcimap',
+        name: 'pciMap',
         meta: {
-          title: '测试页面2',
+          title: '佳都地图引擎',
         },
-        component: () => import('../view/test/test2')
+        component: () => import('../view/pcimap/index')
       }
     ]
   }

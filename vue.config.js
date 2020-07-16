@@ -19,12 +19,22 @@ module.exports = {
       .set('_c', resolve('src/components'))
   },
   devServer: {
+    host: '0.0.0.0',
     proxy: {
       '/amap': {
-        target: 'http://192.168.1.217:30002',
-        // pathRewrite: { '^/amap': '/amap' }, //  用/api 代替target里面的地址/
+        // target: 'http://58.58.162.59:13393',
+        target: 'http://58.58.162.59:38913', // 东营港
+        // target: 'http://localhost:8085',
+        pathRewrite: {'^/3dmap': ''},
         changeOrigin: true
-      }
+      },
+      '/3dmap': {
+        // target: 'http://58.58.162.59:13393',
+        target: 'http://58.58.162.59:38926', // 东营港
+        // target: 'http://localhost:8085',
+        pathRewrite: {'^/3dmap': ''},
+        changeOrigin: true
+      },
     },
   }
 }

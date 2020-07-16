@@ -10,8 +10,8 @@
       <div @click="toRoute(routes[0])">地球</div>
       <div @click="toRoute(routes[1])">宇宙</div>
       <div>{{title}}</div>
-      <div @click="toRoute(routes[2])">测试1</div>
-      <div @click="toRoute(routes[3])">测试2</div>
+      <div @click="toRoute(routes[2])">Cesium</div>
+      <div @click="toRoute(routes[3])">佳都</div>
     </div>
   </div>
 </template>
@@ -93,7 +93,7 @@
       float: right;
     }
     .center-title {
-      .font;
+      font-family: "cursive";
       font-size: 28px;
       letter-spacing: 5px;
       div {
@@ -111,7 +111,7 @@
         left: 46.5%;
       }
       div:nth-child(4) {
-        left: 60.5%;
+        left: 59%;
       }
       div:nth-child(5) {
         left: 67.5%;

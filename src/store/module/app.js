@@ -3,7 +3,7 @@ import {getMenuList} from '@/libs/tool'
 
 export default {
   state: {
-    username: '',
+    username: '565636378637556478',
     menuList: backstageRoute
   },
   getters: {

@@ -14,6 +14,7 @@
 
   import {login} from '@/api/user'
   import {setToken} from '../../libs/utils'
+  import md5 from 'js-md5'
 
   export default {
     name: 'login',
@@ -25,19 +26,20 @@
     },
     methods: {
       handleSubmit() {
-        let params = {
-          account: this.username,
-          password: this.password
-        }
-        login(params).then(res => {
-          if (res.data.data) {
-            setToken(res.data.token)
-            this.$store.commit('setUserInfo', res.data)
-            this.$router.push({name: this.$config.homePage})
-          }
-        }).catch(error => {
-          this.$Message.error(error)
-        })
+        // let params = {
+        //   username: this.username,
+        //   password: md5(this.password)   // md5加密
+        // }
+          this.$router.push({name: this.$config.homePage})
+        // login(params).then(res => {
+        //   if (res.data.data) {
+        //     setToken(res.data.token)
+        //     this.$store.commit('setUserInfo', res.data)
+        //     this.$router.push({name: this.$config.homePage})
+        //   }
+        // }).catch(error => {
+        //   this.$Message.error(error)
+        // })
 
       }
     },

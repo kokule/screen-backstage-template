@@ -35,7 +35,7 @@ export default [
     ]
   },
   {
-    path: '/backstage-test',
+    path: '/backstage-pcimap',
     name: 'backstageTest',
     meta:{
       title: '常用组件',

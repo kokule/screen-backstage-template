@@ -4,7 +4,7 @@ import store from './store'
 import './index.less'
 import router from './router/index'
 import iView from 'iview'
-import 'iview/dist/styles/iview.css'
+  import 'iview/dist/styles/iview.css'
 import moment from 'moment'
 import config from './config'
 
